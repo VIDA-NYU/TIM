@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>accd3aa8-1ba0-4223-9bbe-0c431709210b</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="RMCameraReader.cpp" />
+    <ClCompile Include="TimeConverter.cpp" />
+    <ClCompile Include="HttpClientConnection.cpp" />
+    <ClCompile Include="VideoFrameProcessor.cpp" />
+    <ClCompile Include="SensorManager.cpp" />
+    <ClCompile Include="FrameHeader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="ResearchModeApi.h" />
+    <ClInclude Include="RMCameraReader.h" />
+    <ClInclude Include="TimeConverter.h" />
+    <ClInclude Include="utils.hpp" />
+    <ClInclude Include="HttpClientConnection.h" />
+    <ClInclude Include="VideoFrameProcessor.h" />
+    <ClInclude Include="SensorManager.h" />
+    <ClInclude Include="FrameHeader.h" />
+    <ClInclude Include="stb_image_write.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="HLStreamer.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HLStreamerUnityPlugin.def" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+</Project>

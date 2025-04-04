@@ -1,0 +1,50 @@
+Operation steps for Hololens_HUD and issues fixation
+
+For unity project:
+  The Configuration
+    1,Object and corresponding 
+      Object[Quad](under Maincamera, Canvas) -- Script [DrawBoundingBoxes]{ Texture size: (recommended)500, 500. TextBoxPrefb: TextBox under Prefabs folder}
+      Object[ScriptHolder] -- Script [Drawer]{DrawBoundingBoxes: the Quad shown above, Server: the ip address of Server.(Using ipconfig in windows to check), Port: (recommended)23939}
+                           -- HLStreaming
+      *Be sure to double check the server's IP. It can only be changed here.*
+    2, The plugin(Under Assets/ Plugins(folder)):
+      HLStreamer Unity Plugin.dll: SDK UWP; CPU ARM64
+      HLStreamer Unity Plugin.winmd: SDK UWP; CPU AnyCPU
+      The others: SDK: Any, CPU Any
+      (Don't forget to click apply)
+  Build:
+    Target Device: HoloLens
+    Architecture: ARM64
+    Build and Run on: USB Device
+    Build configuration: Debug
+    Player Settings: -> Publishing Setting -> Certificate deselect
+  After Built:
+    Check https://github.com/VIDA-NYU/ptg-alphatesting/tree/streaming/Streaming/HLStreamerExample and replace codes in package file.
+  Issues:
+    1, The possible associated script cannot be loaded unity
+      Fixation: remove all the scripts components and add them  to the correspoding game objects:
+    2, Build issue with plugins:
+      Fixation: Check HLStreamer Unity Plugin.dll configuration
+Build and deploy in Hololens:
+  1, USB cable connected Hololens and PC. Uninstall the previous app in HoloLens
+  2, click Hololens HUD.sln. Change the configuration to Release, ARM64 and Device. (If want debugging choose debug)
+  3, Build and deploy (if debugging build and directly click Device button)
+  
+  Possible Issues:
+    1, In debug mode, Exception thrown in .exe Microsoft C++ exception: winrt::hresult_error at memory location
+    (Ignore) Sill not finding solution, but it's harmless so far.
+    2, Not responding for a long time (Longer than mins), check the connection of PC and Hololens
+
+For Integration part:
+  1, Keep PC and HoloLens both in same Network
+  2, Firstly open the app in hololens. (If its in debug mode, that should be already opened)
+  2, Using[ python main.py desktop --holo-ip 10.18.18.99 --send ] to initiate the python part (first located in that directory). 
+  Check here 
+    https://github.com/VIDA-NYU/ptg-alphatesting/tree/streaming/Streaming/python
+    (The ip address could be changed. The local ip address in Hololens Setting for double checking)
+    
+  Possible issues:
+    onnx file error: Download the file from https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/yolov3/model/yolov3-10.onnx
+      and manually drag that into python/asstes folder replace the old one.
+    Not have bounding box in screen: check the Python output, if there is something wrong with onnx, do the same thing above.
+									If you see "Listening: 0.0.0.0:23939" and "Awaiting connection..." but don't see a message "Connected: ({HoloLens_ip}, 5XXXX)", then check the firewall setting for Python.

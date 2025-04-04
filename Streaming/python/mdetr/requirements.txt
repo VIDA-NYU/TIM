@@ -1,0 +1,9 @@
+Pillow
+requests
+matplotlib
+numpy
+scikit-image
+timm
+transformers
+torch
+torchvision

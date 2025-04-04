@@ -1,0 +1,9 @@
+msgpack
+numpy
+matplotlib
+requests
+opencv-python
+Pillow
+onnxruntime
+pyinstrument
+fire

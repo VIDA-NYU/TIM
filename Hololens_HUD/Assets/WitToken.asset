@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: WitToken
+  m_EditorClassIdentifier: 
+  application:
+    witConfiguration: {fileID: 11400000}
+    name: tim_demo
+    id: 925175958884869
+    lang: en
+    isPrivate: 1
+    createdAt: 2022-08-31T12:08:30-0700
+  configId: a14bcad9f8543fe46a02d61e4b6e0608
+  clientAccessToken: TVFIU7VWZWI2Q5IZ7TYVLEZCXY7JJ5V3
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
+    dictation: 
+  entities:
+  - witConfiguration: {fileID: 11400000}
+    id: 457703912940178
+    name: color
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 443269520908860
+      name: color
+    keywords:
+    - keyword: blue
+      synonyms:
+      - blue
+    - keyword: green
+      synonyms:
+      - green
+    - keyword: red
+      synonyms:
+      - red
+    - keyword: white
+      synonyms:
+      - white
+  - witConfiguration: {fileID: 11400000}
+    id: 648587776943674
+    name: object
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 771183370668508
+      name: object
+    keywords:
+    - keyword: capsule
+      synonyms:
+      - capsule
+    - keyword: cube
+      synonyms:
+      - cube
+    - keyword: cylinder
+      synonyms:
+      - cylinder
+      - tube
+    - keyword: floss
+      synonyms:
+      - floss
+    - keyword: fork
+      synonyms:
+      - fork
+    - keyword: knife
+      synonyms:
+      - knife
+    - keyword: sphere
+      synonyms:
+      - sphere
+  - witConfiguration: {fileID: 11400000}
+    id: 535a80e2-6fc8-4991-b707-50dd0c862dfb
+    name: wit$number
+    lookups: []
+    roles:
+    - id: 786093509182442
+      name: number
+    keywords: []
+  intents:
+  - witConfiguration: {fileID: 11400000}
+    id: 782333712920051
+    name: change_color
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 443269520908860
+      name: color:color
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 771183370668508
+      name: object:object
+      lookups: []
+      roles: []
+      keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 1230235864494830
+    name: change_size
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 771183370668508
+      name: object:object
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 786093509182442
+      name: wit$number:number
+      lookups: []
+      roles: []
+      keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 818599975817345
+    name: next_step
+    entities: []
+  - witConfiguration: {fileID: 11400000}
+    id: 1539529773129427
+    name: show_object
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 771183370668508
+      name: object:object
+      lookups: []
+      roles: []
+      keywords: []
+  traits: []
+  isDemoOnly: 0
+  useConduit: 0
+  manifestLocalPath: ConduitManifest-5e7bf3c3-c793-476f-9803-2b96ec1d03e7.json
+  autoGenerateManifest: 0
+  openManifestOnGeneration: 0

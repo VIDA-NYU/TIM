@@ -1,0 +1,24 @@
+namespace HLStreamerUnityPlugin
+{
+    runtimeclass HLStreamer
+    {
+        HLStreamer();
+
+        void ReleaseAllSensors();
+
+        void Initialize(Windows.Perception.Spatial.SpatialCoordinateSystem refCoord);
+        void StartStreaming();
+        void StopStreaming();
+
+        void ActivateAll();
+        void ActivateMain();
+        void ActivateLL();
+        void ActivateLF();
+        void ActivateRF();
+        void ActivateRR();
+        void ActivateDepth();
+        void ActivateIMUAccel();
+        void ActivateIMUGyro();
+        void ActivateIMUMag();
+    }
+}

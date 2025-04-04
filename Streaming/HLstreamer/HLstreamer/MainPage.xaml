@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="HLstreamer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HLstreamer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="StartBtn" Click="Start_Click" Content="Start" Height="200" Width="300"/>
+            <Button x:Name="StopBtn" Click="Stop_Click" Content="Stop" Height="200" Width="300" Margin="400,0,0,0" IsEnabled="False"/>
+        </Grid>
+    </StackPanel>
+</Page>
